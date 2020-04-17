@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "123",
+      "email": "dupbolub2012@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "456"
+    },
+    {
+      "name": "789"
+    },
+    {
+      "name": "456"
+    },
+    {
+      "name": "789"
+    },
+    {
+      "name": "124",
+      "phone": "456"
+    },
+    {
+      "name": "",
+      "phone": ""
+    },
+    {
+      "name": "123",
+      "phone": "456"
+    }
+  ]
+}

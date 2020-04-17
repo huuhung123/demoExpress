@@ -1,0 +1,14 @@
+/* Static path
+- images
+- css files
+- fonts
+- js files
+- other documents -> mn co the truy cap dc
+app.get('/styles/custom.css', function(req. res) {
+  res.send('abc')
+} -> ko phai cach lam thong thuong
+*/ 
+
+body {
+  background-color: #ddd;
+}

@@ -1,0 +1,38 @@
+var db = require('../db')
+
+module.exports.index = function(req, res) {
+    res.render('users/index', {
+        users: db.get('users').value()
+    });
+   // console.log(req.cookies)
+}
+
+module.exports.search = function(req, res) {
+    var q = req.query.q;
+    var matchedUsers =  db.get('users').filter(function(user) {
+        return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
+    })
+    
+    res.render('users/index', {
+        users: matchedUsers
+    })
+}
+
+module.exports.create = function(req, res) {
+    //   console.log(req.cookies)
+    res.render('users/create')
+}
+
+module.exports.get = function(req, res) {
+    var id = parseInt(req.params.id);
+    var user = db.get('users').find({id: id}).value();
+    res.render('users/view', {
+        user: user
+    })
+}
+
+module.exports.postCreate = function(req, res) {
+
+    db.get('users').push(req.body).write();
+    res.redirect('/users')
+}
